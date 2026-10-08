@@ -20,11 +20,16 @@ namespace StirringSpoonRecipe
 
         private void SetUpRecipes()
         {
-            AssetBundle assetBundle = AssetBundle.LoadFromFile(Path.Combine(MelonEnvironment.ModsDirectory, "StirringSpoonRecipe/AssetBundles/!stirringspoonrecipe"));
-            ChiselDefinition chiselDefinition_StirringSpoon = assetBundle.LoadAsset<ChiselDefinition>("Stirring Spoon Recipe.asset");
-
             Item stirringSpoon = Item.All.Where(item => item.Hash == 41010u).First();
-            CustomRecipesAPI.Core.SetUpChiselDefinition(chiselDefinition_StirringSpoon, stirringSpoon.Glyph);
+            CustomRecipesAPI.Core.SetUpChiselDefinitionThroughCode(
+                12521,
+                stirringSpoon.Glyph,
+                ChiselBlockSize.Medium,
+                [11,10,0,1,5,3,7,2,9,4,6,8],
+                [
+                    CustomRecipesAPI.Core.CreatePrefabSpawnPosition(23950u, Vector3.zero, Quaternion.identity)
+                ]
+            );
         }
     }
 }
