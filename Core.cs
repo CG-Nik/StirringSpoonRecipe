@@ -22,6 +22,7 @@ namespace StirringSpoonRecipe
         {
             Item stirringSpoon = Item.All.Where(item => item.Hash == 41010u).First();
             CustomRecipesAPI.Core.SetUpChiselDefinitionThroughCode(
+                "Stirring Spoon Recipe",
                 12521,
                 stirringSpoon.Glyph,
                 ChiselBlockSize.Medium,
